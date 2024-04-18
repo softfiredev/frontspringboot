@@ -1,0 +1,200 @@
+<div *ngIf="viewMode; else editable">
+  <div *ngIf="currentUser.id">
+    <h4>User</h4>
+    <div>
+      <label><strong>Name:</strong></label> {{ currentUser.name }}
+    </div>
+    <div>
+      <label><strong>prenom:</strong></label> {{ currentUser.prenom }}
+    </div>
+    <div>
+      <label><strong>password:</strong></label> {{ currentUser.password }}
+    </div>
+    <div>
+      <label><strong>email:</strong></label> {{ currentUser.email }}
+    </div>
+    <div>
+      <label><strong>adresse:</strong></label> {{ currentUser.adresse }}
+    </div>
+    <div>
+      <label><strong>poste:</strong></label> {{ currentUser.poste }}
+    </div>
+    <div>
+      <label><strong>Situation Familiale:</strong></label> {{ currentUser.situation_familiale }}
+    </div>
+    <div>
+      <label><strong>matricule:</strong></label> {{ currentUser.matricule }}
+    </div>
+    <div>
+      <label><strong>status:</strong></label> {{ currentUser.status }}
+    </div>
+    <div>
+      <label><strong>CNSS:</strong></label> {{ currentUser.CNSS }}
+    </div>
+    <div>
+      <label><strong>Date de paiement:</strong></label> {{ currentUser.date_paiement }}
+    </div>
+    <div>
+      <label><strong>Periode:</strong></label> {{ currentUser.periode }}
+    </div>
+
+    <a class="badge badge-warning"
+       routerLink="/users/{{ currentUser.id }}">
+      Edit
+    </a>
+  </div>
+
+  <div *ngIf="!currentUser">
+    <br />
+    <p>Please click on a User...</p>
+  </div>
+</div>
+
+<ng-template #editable>
+  <div *ngIf="currentUser.id" class="edit-form">
+    <h4>Tutorial</h4>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          [(ngModel)]="currentUser.name"
+          name="name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="prenom">prenom</label>
+        <input
+          type="text"
+          class="form-control"
+          id="prenom"
+          [(ngModel)]="currentUser.prenom"
+          name="prenom"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          [(ngModel)]="currentUser.password"
+          name="password"
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          [(ngModel)]="currentUser.email"
+          name="email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="adresse">Adresse</label>
+        <input
+          type="text"
+          class="form-control"
+          id="adresse"
+          [(ngModel)]="currentUser.adresse"
+          name="adresse"
+        />
+      </div>
+      <div class="form-group">
+        <label for="poste">Poste</label>
+        <input
+          type="poste"
+          class="form-control"
+          id="poste"
+          [(ngModel)]="currentUser.poste"
+          name="poste"
+        />
+      </div>
+      <div class="form-group">
+        <label for="situation_familiale">Situation familiale</label>
+        <input
+          type="text"
+          class="form-control"
+          id="situation_familiale"
+          [(ngModel)]="currentUser.situation_familiale"
+          name="situation_familiale"
+        />
+      </div>
+      <div class="form-group">
+        <label for="matricule">matricule</label>
+        <input
+          type="text"
+          class="form-control"
+          id="matricule"
+          [(ngModel)]="currentUser.matricule"
+          name="matricule"
+        />
+      </div>
+      <div class="form-group">
+        <label for="status">Status</label>
+        <input
+          type="text"
+          class="form-control"
+          id="status"
+          [(ngModel)]="currentUser.status"
+          name="status"
+        />
+      </div>
+      <div class="form-group">
+        <label for="CNSS">CNSS</label>
+        <input
+          type="text"
+          class="form-control"
+          id="CNSS"
+          [(ngModel)]="currentUser.CNSS"
+          name="CNSS"
+        />
+      </div>
+      <div class="form-group">
+        <label for="date_paiement">Date paiement</label>
+        <input
+          type="date"
+          class="form-control"
+          id="date_paiement"
+          [(ngModel)]="currentUser.date_paiement"
+          name="date_paiement"
+        />
+      </div>
+      <div class="form-group">
+        <label for="periode">Periode</label>
+        <input
+          type="text"
+          class="form-control"
+          id="periode"
+          [(ngModel)]="currentUser.periode"
+          name="periode"
+        />
+      </div>
+
+    </form>
+
+    <button class="badge badge-danger mr-2" (click)="deleteUser()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="badge badge-success mb-2"
+      (click)="updateUser()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentUser.id">
+    <br />
+    <p>Cannot access this User...</p>
+  </div>
+</ng-template>
+

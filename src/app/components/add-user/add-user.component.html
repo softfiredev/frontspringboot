@@ -1,0 +1,144 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          required
+          [(ngModel)]="user.name"
+          name="name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="prenom">Prenom</label>
+        <input
+          type="text"
+          class="form-control"
+          id="prenom"
+          required
+          [(ngModel)]="user.prenom"
+          name="prenom"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          required
+          [(ngModel)]="user.password"
+          name="password"
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          required
+          [(ngModel)]="user.email"
+          name="email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="adresse">Adresse</label>
+        <input
+          type="text"
+          class="form-control"
+          id="adresse"
+          required
+          [(ngModel)]="user.adresse"
+          name="adresse"
+        />
+      </div>
+      <div class="form-group">
+        <label for="poste">Poste</label>
+        <input
+          type="text"
+          class="form-control"
+          id="poste"
+          required
+          [(ngModel)]="user.poste"
+          name="poste"
+        />
+      </div>
+      <div class="form-group">
+        <label for="situation_familiale">Situation Familiale</label>
+        <input
+          type="text"
+          class="form-control"
+          id="situation_familiale"
+          required
+          [(ngModel)]="user.situation_familiale"
+          name="situation_familiale"
+        />
+      </div>
+      <div class="form-group">
+        <label for="matricule">Matricule</label>
+        <input
+          type="text"
+          class="form-control"
+          id="matricule"
+          required
+          [(ngModel)]="user.matricule"
+          name="matricule"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status</label>
+        <input
+          type="text"
+          class="form-control"
+          id="status"
+          required
+          [(ngModel)]="user.status"
+          name="status"
+        />
+      </div>
+      <div class="form-group">
+        <label for="CNSS">CNSS</label>
+        <input
+          type="text"
+          class="form-control"
+          id="CNSS"
+          required
+          [(ngModel)]="user.CNSS"
+          name="CNSS"
+        />
+      </div><div class="form-group">
+      <label for="date_paiement">Date Paiement</label>
+      <input
+        type="date"
+        class="form-control"
+        id="date_paiement"
+        required
+        [(ngModel)]="user.date_paiement"
+        name="date_paiement"
+      />
+    </div><div class="form-group">
+      <label for="periode">Periode</label>
+      <input
+        type="text"
+        class="form-control"
+        id="periode"
+        required
+        [(ngModel)]="user.periode"
+        name="periode"
+      />
+    </div>
+      <button (click)="saveUser()" class="btn btn-success">Create User</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Tutorial was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newUser()">Add</button>
+    </div>
+  </div>
+</div>
+
